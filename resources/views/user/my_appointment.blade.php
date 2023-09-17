@@ -118,6 +118,7 @@
                 <th style="padding: 10px; font-size:20px; color:white;">Date</th>
                 <th style="padding: 10px; font-size:20px; color:white;">Message</th>
                 <th style="padding: 10px; font-size:20px; color:white;">Status</th>
+                <th style="padding: 10px; font-size:20px; color:white;">Queue Number </th>
                 <th style="padding: 10px; font-size:20px; color:white;">Cancel Appointment</th>
             </tr>
             @foreach ($appoint as $appoint)
@@ -126,6 +127,7 @@
                 <td style="padding: 10px; color:white;">{{$appoint->date}}</td>
                 <td style="padding: 10px; color:white;">{{$appoint->message}}</td>
                 <td style="padding: 10px; color:white;">{{$appoint->status}}</td>
+                <td style="padding: 10px; color:white;">1</td>
                 <td><a class="btn btn-danger" 
                 href="{{ url('cancel_appoint', $appoint->id) }}"
                 onclick="return confirm('Are you sure to delete this appoint?')">Cancel</a></td>

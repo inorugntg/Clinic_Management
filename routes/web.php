@@ -47,5 +47,11 @@ Route::get('/deletedoctor/{id}', [AdminController::class, 'deletedoctor']);
 Route::get('/updatedoctor/{id}', [AdminController::class, 'updatedoctor']);
 Route::post('/editdoctor/{id}', [AdminController::class, 'editdoctor']);
 
-// Appointment History
+// Medical Device
 Route::get('/medicaldeviceintegration', [AdminController::class, 'medicaldeviceintegration']);
+
+// Medicine
+Route::get('/medicine', [AdminController::class, 'medicine']);
+
+// Medicine
+// Route::get('/doctor_schedule', [AdminController::class, 'doctor_schedule']);

@@ -100,4 +100,14 @@ class AdminController extends Controller
     {
         return view('admin.medicaldeviceintegration');
     }
+
+    public function medicine()
+    {
+        return view('admin.medicine');
+    }
+
+    // public function doctor_schedule()
+    // {
+    //     return view('admin.doctor_schedule');
+    // }
 }

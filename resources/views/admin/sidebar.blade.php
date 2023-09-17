@@ -89,5 +89,21 @@
               <span class="menu-title">Medical Device</span>
             </a>
           </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('medicine')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title">Medicine</span>
+            </a>
+          </li>
+          <!-- <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('doctor_schedule')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title">Doctor Schedule</span>
+            </a>
+          </li> -->
         </ul>
       </nav>

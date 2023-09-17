@@ -34,6 +34,7 @@ class HomeController extends Controller
             return redirect()->back();
         }
     }
+    
     public function appointment(Request $request)
     {
         $data = new Appointment; // Make sure the model name is capitalized
@@ -72,4 +73,9 @@ class HomeController extends Controller
         $data->delete();
         return redirect()->back();
     }
+
+    // public function doctor_schedule()
+    // {
+    //     return view('user.doctor_schedule');
+    // }
 }
