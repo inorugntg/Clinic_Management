@@ -13,4 +13,11 @@ class Medicine extends Model
     {
         return $this->belongsTo(Doctor::class);
     }
+
+    protected $fillable=[
+        'medicine_name',
+        'stock_quantity',
+        'price',
+        'description'
+    ];
 }

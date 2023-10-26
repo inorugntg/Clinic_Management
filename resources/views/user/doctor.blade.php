@@ -15,12 +15,7 @@
                     <div class="body">
                         <p class="text-xl mb-0">{{ $doctors->name }}</p>
                         <span class="text-sm text-grey">{{ $doctors->speciality }}</span>
-                        <p class="card-text">Practice Schedule:</p>
-                        <ul>
-                            <li>Monday: 09.00 AM - 04.00 PM</li>
-                            <li>Tuesday: 09.00 AM - 04.00 PM</li>
-                            <li>Wednesday: 09.00 AM - 12.00 PM</li>
-                        </ul>
+                        <p class="card-text">{{ $doctors->schedule }}</p>
                     </div>
                 </div>
             </div>

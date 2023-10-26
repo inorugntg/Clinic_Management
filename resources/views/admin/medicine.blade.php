@@ -5,6 +5,7 @@
     <!-- Required meta tags -->
     @include('admin.css')
 </head>
+
 <body>
     <div class="container-scroller">
         <!-- partial:partials/_sidebar.html -->
@@ -15,7 +16,7 @@
         <div class="container-fluid page-body-wrapper">
             <div class="container">
                 <h2>Medicines CRUD</h2>
-                <a href="#" class="btn btn-success mb-2">Add Medicine</a>
+                <a href="{{ url('medicine/add') }}" class="btn btn-success mb-2">Add Medicine</a>
                 <table class="table table-bordered" style="width: 900px; height: 200px;">
                     <thead>
                         <tr>
@@ -29,18 +30,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <tr style="font-size: 16px;">
-                            <td style="padding: 10px;">1</td>
-                            <td style="padding: 10px;">Promag</td>
-                            <td style="padding: 10px;">12</td>
-                            <td style="padding: 10px;">Rp 36.000/Packs</td>
-                            <td style="padding: 10px;">Obat untuk sakit maag</td>
-                            <td style="padding: 10px;">Mr. Wanto</td>
-                            <td style="padding: 10px;">
-                                <a href="#" class="btn btn-info btn-sm" style="font-size: 14px;">Edit</a>
-                                <a href="#" class="btn btn-danger btn-sm" style="font-size: 14px;">Delete</a>
-                            </td>
-                        </tr>
+                        @foreach($medicines as $medicine)
+                            <tr style="font-size: 16px;">
+                                <td style="padding: 10px;">{{ $medicine->id }}</td>
+                                <td style="padding: 10px;">{{ $medicine->medicine_name }}</td>
+                                <td style="padding: 10px;">{{ $medicine->stock_quantity }}</td>
+                                <td style="padding: 10px;">{{ $medicine->price }}</td>
+                                <td style="padding: 10px;">{{ $medicine->description }}</td>
+                                <td style="padding: 10px;">{{ $medicine->doctor->name }}</td>
+                                <td style="padding: 10px;">
+                                    <a href="#" class="btn btn-info btn-sm" style="font-size: 14px;">Edit</a>
+                                    <a href="#" class="btn btn-danger btn-sm" style="font-size: 14px;">Delete</a>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

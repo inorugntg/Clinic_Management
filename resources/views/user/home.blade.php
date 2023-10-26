@@ -180,8 +180,6 @@
 
     @include('user.doctor')
 
-    @include('user.doctor_schedule')
-
     @include('user.latest')
 
     @include('user.appointment')

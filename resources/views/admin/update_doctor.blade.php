@@ -45,6 +45,11 @@
                     <input type="text" style="color: black;" name="room" id="room" value="{{ $data->room }}">
                 </div>
                 <div style="padding: 10px;">
+                    <label for="schedule">Schedule</label>
+                    <input type="text" style="color: black;" name="doctor_schedule" id="schedule" value="{{ $data->schedule }}">
+
+                </div>
+                <div style="padding: 10px;">
                     <label for="image">Old Image</label>
                     <img height="150" width="150" src="{{ asset('doctorimage/' . $data->image) }}" alt="">
                 </div>

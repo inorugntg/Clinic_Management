@@ -57,6 +57,10 @@
                                 <input type="text" class="form-control" required="" name="room" id="room" placeholder="Write the room number">
                             </div>
                             <div class="form-group">
+                                <label for="other">Doctor Schedule</label>
+                                <input type="text" class="form-control" required="" name="doctor_schedule" id="doctor_schedule" placeholder="Write the Doctor Schedule">
+                            </div>
+                            <div class="form-group">
                                 <label for="other">Doctor Image</label>
                                 <input type="file" class="form-control" required="" name="file" id="other" placeholder="Write the room number">
                             </div>

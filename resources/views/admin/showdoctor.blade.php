@@ -23,6 +23,7 @@
                         <th style="padding: 10px">Speciality</th>
                         <th style="padding: 10px">Room No</th>
                         <th style="padding: 10px">Image</th>
+                        <th style="padding: 10px">Schedule</th>
                         <th style="padding:10px">Action</th>
                     </tr>
                     @foreach ($data as $doctor)
@@ -32,6 +33,7 @@
                         <td>{{ $doctor->speciality }}</td>
                         <td>{{ $doctor->room }}</td>
                         <td><img src="doctorimage/{{ $doctor->image }}" alt="" style="width: 100px; height: 100px;"></td>
+                        <td>{{ $doctor->schedule }}</td>
                         <td>
                             <div class="btn-group">
                                 <a class="btn btn-warning" href="{{url('updatedoctor',$doctor->id)}}">Update</a>

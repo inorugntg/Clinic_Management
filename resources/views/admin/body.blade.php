@@ -7,7 +7,7 @@
             <div class="d-flex align-items-center">
               <div>
                 <h4 class="card-title">Appointment</h4>
-                <h2 class="text-primary mb-0">70</h2>
+                <h2 class="text-primary mb-0">82</h2>
               </div>
               <div class="ml-auto">
                 <div class="icon-box bg-primary">
@@ -24,7 +24,7 @@
             <div class="d-flex align-items-center">
               <div>
                 <h4 class="card-title">Approved</h4>
-                <h2 class="text-success mb-0">82</h2>
+                <h2 class="text-success mb-0">70</h2>
               </div>
               <div class="ml-auto">
                 <div class="icon-box bg-success">
@@ -61,13 +61,13 @@
         label: 'Appointment',
         borderColor: '#007bff',
         backgroundColor: 'transparent',
-        data: [10, 20, 70, 40, 50],
+        data: [13, 23, 82, 43, 53],
       },
       {
         label: 'Approved',
         borderColor: '#28a745',
         backgroundColor: 'transparent',
-        data: [13, 23, 82, 43, 53],
+        data: [10, 20, 70, 40, 50],
       },
     ],
   };

@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('medical_devices', function (Blueprint $table) {
             $table->id();
+            $table->string('device_name');
+            $table->integer('serial_number');
+            $table->string('speciality');
             $table->timestamps();
         });
     }
