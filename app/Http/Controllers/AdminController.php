@@ -41,7 +41,7 @@ class AdminController extends Controller
     public function showappointment()
     {
         $data = appointment::all();
-        return view('admin.showappointment', compact('data'));
+        return view('dokter.showappointment', compact('data'));
     }
 
     public function approved($id)

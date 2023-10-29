@@ -15,7 +15,6 @@ class HomeController extends Controller
         if (Auth::id()) {
             return redirect('home');
         } else {
-
             $doctor = doctor::all();
             return view('user.home', compact('doctor'));
         }
@@ -23,18 +22,22 @@ class HomeController extends Controller
 
     public function redirect()
     {
-        if (Auth::id()) {
-            if (Auth::user()->usertype == '0') {
-                $doctor = doctor::all();
+        if (Auth::check()) {
+            $user = Auth::user();
+            if ($user->usertype == '0') {
+                $doctor = Doctor::all();
                 return view('user.home', compact('doctor'));
-            } else {
+            } elseif ($user->usertype == '1') {
                 return view('admin.home');
+            } elseif ($user->usertype == '2') {
+                return view('dokter.home');
             }
         } else {
             return redirect()->back();
         }
     }
-    
+
+
     public function appointment(Request $request)
     {
         $data = new Appointment; // Make sure the model name is capitalized

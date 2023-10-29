@@ -37,9 +37,11 @@ Route::get('/myappointment', [HomeController::class, 'myappointment']);
 Route::get('/cancel_appoint/{id}', [HomeController::class, 'cancel_appoint']);
 
 //appointment admin
-Route::get('/showappointment', [AdminController::class, 'showappointment']);
-Route::get('/approved/{id}', [AdminController::class, 'approved'])->name('appointment.approved');
-Route::get('/canceled/{id}', [AdminController::class, 'canceled'])->name('canceled.appointment');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/showappointment', [AdminController::class, 'showappointment'])->middleware('dokter');
+    Route::get('/approved/{id}', [AdminController::class, 'approved'])->name('appointment.approved')->middleware('dokter');
+    Route::get('/canceled/{id}', [AdminController::class, 'canceled'])->name('canceled.appointment')->middleware('dokter');
+});
 
 //doctor admin
 Route::get('/showdoctor', [AdminController::class, 'showdoctor']);
@@ -59,6 +61,3 @@ Route::delete('/medicaldevice/delete/{id}', [AdminController::class, 'destroy_de
 Route::get('/medicine', [AdminController::class, 'medicine']);
 Route::get('/medicine/add', [AdminController::class, 'add_medicine']);
 Route::post('/medicine/add', [AdminController::class, 'store_medicine']);
-
-// Medicine
-// Route::get('/doctor_schedule', [AdminController::class, 'doctor_schedule']);

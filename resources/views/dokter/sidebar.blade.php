@@ -12,7 +12,7 @@
             <span class="count bg-success"></span>
           </div>
           <div class="profile-name">
-            <h5 class="mb-0 font-weight-normal">Admin</h5>
+            <h5 class="mb-0 font-weight-normal">Dokter</h5>
             <span>Gold Member</span>
           </div>
         </div>
@@ -58,45 +58,12 @@
     </li>
 
     <li class="nav-item menu-items">
-      <a class="nav-link" href="{{url('add_doctor_view')}}">
+      <a class="nav-link" href="{{url('showappointment')}}">
         <span class="menu-icon">
           <i class="mdi mdi-file-document-box"></i>
         </span>
-        <span class="menu-title">Add Doctors</span>
+        <span class="menu-title">Appointments</span>
       </a>
     </li>
-    <li class="nav-item menu-items">
-      <a class="nav-link" href="{{url('showdoctor')}}">
-        <span class="menu-icon">
-          <i class="mdi mdi-file-document-box"></i>
-        </span>
-        <span class="menu-title">All Doctors</span>
-      </a>
-    </li>
-    <li class="nav-item menu-items">
-      <a class="nav-link" href="{{ url('/medicaldevice') }}">
-        <span class="menu-icon">
-          <i class="mdi mdi-file-document-box"></i>
-        </span>
-        <span class="menu-title">Medical Device</span>
-      </a>
-    </li>
-
-    <li class="nav-item menu-items">
-      <a class="nav-link" href="{{url('medicine')}}">
-        <span class="menu-icon">
-          <i class="mdi mdi-file-document-box"></i>
-        </span>
-        <span class="menu-title">Medicine</span>
-      </a>
-    </li>
-    <!-- <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('doctor_schedule')}}">
-              <span class="menu-icon">
-                <i class="mdi mdi-file-document-box"></i>
-              </span>
-              <span class="menu-title">Doctor Schedule</span>
-            </a>
-          </li> -->
   </ul>
 </nav>
