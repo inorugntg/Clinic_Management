@@ -28,9 +28,11 @@ class HomeController extends Controller
                 $doctor = Doctor::all();
                 return view('user.home', compact('doctor'));
             } elseif ($user->usertype == '1') {
-                return view('admin.home');
+                $data = doctor::all();
+                return view('admin.showdoctor', compact('data'));
             } elseif ($user->usertype == '2') {
-                return view('dokter.home');
+                $data = appointment::all();
+                return view('dokter.showappointment', compact('data'));
             }
         } else {
             return redirect()->back();

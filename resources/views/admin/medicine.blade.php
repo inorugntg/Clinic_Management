@@ -14,9 +14,9 @@
         @include('admin.navbar')
         <!--partial-->
         <div class="container-fluid page-body-wrapper">
-            <div class="container">
-                <h2>Medicines CRUD</h2>
-                <a href="{{ url('medicine/add') }}" class="btn btn-success mb-2">Add Medicine</a>
+            <div class="container mt-5">
+                <h2 class="mb-3">Medicines CRUD</h2>
+                <a href="{{ url('medicine/add') }}" class="btn btn-success mb-3">Add Medicine</a>
                 <!-- Tampilkan pesan notifikasi jika ada -->
                 @if (session('success'))
                 <div class="alert alert-success">

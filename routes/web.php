@@ -38,13 +38,13 @@ Route::get('/cancel_appoint/{id}', [HomeController::class, 'cancel_appoint']);
 
 //appointment milik dokter
 Route::middleware(['auth'])->group(function () {
-    Route::get('/showappointment', [AdminController::class, 'showappointment'])->middleware('dokter');
+    Route::get('/showappointment', [AdminController::class, 'showappointment'])->middleware('dokter')->name('appointmentdokter');
     Route::get('/approved/{id}', [AdminController::class, 'approved'])->name('appointment.approved')->middleware('dokter');
     Route::get('/canceled/{id}', [AdminController::class, 'canceled'])->name('canceled.appointment')->middleware('dokter');
 });
 
 //crud dokkter untuk admin
-Route::get('/showdoctor', [AdminController::class, 'showdoctor']);
+Route::get('/showdoctor', [AdminController::class, 'showdoctor'])->name('showdoctor');
 Route::get('/deletedoctor/{id}', [AdminController::class, 'deletedoctor']);
 Route::get('/updatedoctor/{id}', [AdminController::class, 'updatedoctor']);
 Route::post('/editdoctor/{id}', [AdminController::class, 'editdoctor']);

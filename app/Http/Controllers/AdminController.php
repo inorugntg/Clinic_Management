@@ -100,7 +100,7 @@ class AdminController extends Controller
         $doctor->schedule = $request->doctor_schedule;
         $doctor->save();
 
-        return redirect()->back()->with('message', 'Doctor Data Updated Successfully');
+        return redirect()->route('showdoctor')->with('message', 'Doctor Data Updated Successfully');
     }
 
     public function medical_device()

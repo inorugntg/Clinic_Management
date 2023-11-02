@@ -29,7 +29,7 @@
         <!-- partial:partials/_sidebar.html -->
         @include('dokter.sidebar')
         <!-- partial -->
-        @include('dokter.navbar')
+        {{-- @include('dokter.navbar') --}}
         <!--partial-->
         @include('dokter.body')
         <!-- main-panel ends -->

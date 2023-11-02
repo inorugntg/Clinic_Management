@@ -15,30 +15,30 @@
         @include('admin.navbar')
         <!--partial-->
         <div class="container-fluid page-body-wrapper">
-            <div align="center" style="padding-top:100px;">
-                <table>
-                    <tr style="background-color: black;">
-                        <th style="padding: 10px">Doctor Name</th>
-                        <th style="padding: 10px">Phone</th>
-                        <th style="padding: 10px">Speciality</th>
-                        <th style="padding: 10px">Room No</th>
-                        <th style="padding: 10px">Image</th>
-                        <th style="padding: 10px">Schedule</th>
-                        <th style="padding:10px">Action</th>
+            <div class="ms-4" style="padding-top:100px; overflow:auto;">
+                <table class="table table-dark table-hover border rounded align-middle" style="width: 100px;">
+                    <tr>
+                        <th class="text-center mx-3">Doctor Name</th>
+                        <th class="text-center mx-3">Phone</th>
+                        <th class="text-center mx-3">Speciality</th>
+                        <th class="text-center mx-3">Room No</th>
+                        <th class="text-center mx-3">Image</th>
+                        <th class="text-center mx-3">Schedule</th>
+                        <th class="text-center mx-3">Action</th>
                     </tr>
                     @foreach ($data as $doctor)
-                    <tr align="center" style="background-color: skyblue;">
-                        <td>{{ $doctor->name }}</td>
-                        <td>{{ $doctor->phone }}</td>
-                        <td>{{ $doctor->speciality }}</td>
-                        <td>{{ $doctor->room }}</td>
-                        <td><img src="doctorimage/{{ $doctor->image }}" alt="" style="width: 100px; height: 100px;"></td>
-                        <td>{{ $doctor->schedule }}</td>
-                        <td>
-                            <div class="btn-group">
-                                <a class="btn btn-warning" href="{{url('updatedoctor',$doctor->id)}}">Update</a>
+                    <tr class="table-success table-hover border rounded">
+                        <td class="align-middle text-center mx-3">{{ $doctor->name }}</td>
+                        <td class="align-middle text-center mx-3">{{ $doctor->phone }}</td>
+                        <td class="align-middle text-center mx-3">{{ $doctor->speciality }}</td>
+                        <td class="align-middle text-center mx-3">{{ $doctor->room }}</td>
+                        <td class="align-middle text-center mx-3"><img src="doctorimage/{{ $doctor->image }}" alt="" style=""></td>
+                        <td class="align-middle text-center mx-3">{{ $doctor->schedule }}</td>
+                        <td class="align-middle text-center mx-3">
+                            <div class="mx-4">
+                                <a class="btn btn-warning text-black" href="{{url('updatedoctor',$doctor->id)}}">Update</a>
                                 <a  onclick="return confirm('Are you sure to delete this?')"
-                                class="btn btn-danger" 
+                                class="btn btn-danger text-black" 
                                 href="{{url('deletedoctor',$doctor->id)}}">Delete</a>
                             </div>
                         </td>

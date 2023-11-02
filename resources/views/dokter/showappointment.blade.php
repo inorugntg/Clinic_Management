@@ -46,28 +46,28 @@
         <!--partial-->
         <div class="container-fluid page-body-wrapper">
             <div align="center" style="padding-top:130px;">
-                <table>
-                    <tr style="background-color:black;">
-                        <th style="padding:10px">Customer Name</th>
-                        <th style="padding:10px">Email</th>
-                        <th style="padding:10px">Phone</th>
-                        <th style="padding:10px">Doctor Name</th>
-                        <th style="padding:10px">Date</th>
-                        <th style="padding:10px">Message</th>
-                        <th style="padding:10px">Status</th>
-                        <th style="padding:10px">Action</th>
+                <table class="table table-dark table-hover border rounded text-center align-middle">
+                    <tr>
+                        <th class="align-middle text-center mx-3">Customer Name</th>
+                        <th class="align-middle text-center mx-3">Email</th>
+                        <th class="align-middle text-center mx-3">Phone</th>
+                        <th class="align-middle text-center mx-3">Doctor Name</th>
+                        <th class="align-middle text-center mx-3">Date</th>
+                        <th class="align-middle text-center mx-3">Message</th>
+                        <th class="align-middle text-center mx-3">Status</th>
+                        <th class="align-middle text-center mx-3">Action</th>
                     </tr>
                     @foreach ($data as $appoint)
-                    <tr align="center" style="background-color: skyblue;">
-                        <td>{{$appoint->name}}</td>
-                        <td>{{$appoint->email}}</td>
-                        <td>{{$appoint->phone}}</td>
-                        <td>{{$appoint->doctor}}</td>
-                        <td>{{$appoint->date}}</td>
-                        <td>{{$appoint->message}}</td>
-                        <td>{{$appoint->status}}</td>
-                        <td>
-                            <div class="btn-group">
+                    <tr>
+                        <td class="align-middle text-center mx-3">{{$appoint->name}}</td>
+                        <td class="align-middle text-center mx-3">{{$appoint->email}}</td>
+                        <td class="align-middle text-center mx-3">{{$appoint->phone}}</td>
+                        <td class="align-middle text-center mx-3">{{$appoint->doctor}}</td>
+                        <td class="align-middle text-center mx-3">{{$appoint->date}}</td>
+                        <td class="align-middle text-center mx-3">{{$appoint->message}}</td>
+                        <td class="align-middle text-center mx-3">{{$appoint->status}}</td>
+                        <td class="align-middle text-center mx-3">
+                            <div class="mx-5">
                                 <a class="btn btn-danger" href="{{ route('canceled.appointment', $appoint->id) }}">Canceled</a>
                                 <a class="btn btn-success" href="{{ route('appointment.approved', $appoint->id) }}">Approved</a>
                             </div>

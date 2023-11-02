@@ -13,9 +13,9 @@
         @include('admin.navbar')
 
         <div class="container-fluid page-body-wrapper">
-            <div class="container">
-                <h2>Medical Devices CRUD</h2>
-                <a href="{{ url('/medicaldevice_add') }}" class="btn btn-success mb-2">Add Medical Device</a>
+            <div class="container mt-5">
+                <h2 class="mb-3">Medical Devices CRUD</h2>
+                <a href="{{ url('/medicaldevice_add') }}" class="btn btn-success mb-3">Add Medical Device</a>
                 <!-- Tampilkan pesan notifikasi jika ada -->
                 @if (session('success'))
                 <div class="alert alert-success">

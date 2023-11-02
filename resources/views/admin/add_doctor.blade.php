@@ -34,17 +34,18 @@
                         <h1 class="text-center">Add Doctor</h1>
                         <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
                             @csrf
+
                             <div class="form-group">
                                 <label for="name">Doctor Name</label>
-                                <input type="text" class="form-control" required="" name="name" id="name" placeholder="Write the name">
+                                <input type="text" class="form-control text-primary" required="" name="name" id="name" placeholder="Write the name">
                             </div>
                             <div class="form-group">
                                 <label for="number">Phone</label>
-                                <input type="number" class="form-control" required="" name="number" id="number" placeholder="Write the number">
+                                <input type="number" class="form-control text-primary" required="" name="number" id="number" placeholder="Write the number">
                             </div>
                             <div class="form-group">
                                 <label for="speciality">Specialty</label>
-                                <select class="form-control" name="speciality" required="" id="speciality" style="color:black;">
+                                <select class="form-control text-primary" name="speciality" required="" id="speciality" style="color:black;">
                                     <option value="">-- Select --</option>
                                     <option value="skin">Skin</option>
                                     <option value="heart">Heart</option>
@@ -54,12 +55,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="other">Room No</label>
-                                <input type="text" class="form-control" required="" name="room" id="room" placeholder="Write the room number">
+                                <input type="text" class="form-control text-primary" required="" name="room" id="room" placeholder="Write the room number">
                             </div>
                             <div class="form-group">
                                 <label for="other">Doctor Schedule</label>
-                                <input type="text" class="form-control" required="" name="doctor_schedule" id="doctor_schedule" placeholder="Write the Doctor Schedule">
+                                <input type="text" class="form-control text-primary" required="" name="doctor_schedule" id="doctor_schedule" placeholder="Write the Doctor Schedule">
                             </div>
+                            
                             <div class="form-group">
                                 <label for="other">Doctor Image</label>
                                 <input type="file" class="form-control" required="" name="file" id="other" placeholder="Write the room number">
