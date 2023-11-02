@@ -9,11 +9,6 @@ class Medicine extends Model
 {
     use HasFactory;
 
-    public function doctor()
-    {
-        return $this->belongsTo(Doctor::class);
-    }
-
     protected $fillable=[
         'medicine_name',
         'stock_quantity',

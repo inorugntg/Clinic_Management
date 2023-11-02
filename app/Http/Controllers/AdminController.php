@@ -164,7 +164,7 @@ class AdminController extends Controller
 
     public function medicine()
     {
-        $medicines = Medicine::with('doctor')->get();
+        $medicines = Medicine::all();
         return view('admin.medicine', compact('medicines'));
     }
 
@@ -181,19 +181,43 @@ class AdminController extends Controller
             'stock_quantity' => 'required|integer',
             'price' => 'required|string',
             'description' => 'required|string',
-            'doctor' => 'required|string',
         ]);
 
-        // Create medicine
-        // Adjust this part based on your Medical model and database structure
-        Medicine::create([
-            'medicine_name' => $request->medicine_name,
-            'stock_quantity' => $request->stock_quantity,
-            'price' => $request->price,
-            'description' => $request->description,
-            'doctor' => $request->doctor,
-        ]);
+        // Ambil semua data yang diterima dari formulir
+        $data = $request->all();
+
+        // Buat obat dengan data yang sudah disiapkan
+        Medicine::create($data);
 
         return redirect()->route('admin.medicine')->with('success', 'Medicine added successfully.');
+    }
+
+    public function medicine_edit($id)
+    {
+        $medicines = Medicine::findOrFail($id);
+        return view('admin.edit_medicine', compact('medicines'));
+    }
+
+    public function update_medicine(Request $request, $id)
+    {
+        $request->validate([
+            'medicine_name' => 'required|string|max:255',
+            'stock_quantity' => 'required|integer',
+            'price' => 'required|string',
+            'description' => 'required|string',
+        ]);
+
+        $medicine = Medicine::findOrFail($id);
+        $medicine->update($request->all());
+
+        return redirect()->route('admin.medicine')->with('success', 'Medicine updated successfully.');
+    }
+
+    public function destroy_medicine($id)
+    {
+        $medicines = Medicine::findOrFail($id);
+        $medicines->delete();
+
+        return redirect()->route('admin.medicine')->with('success', 'Medicine deleted successfully.');
     }
 }

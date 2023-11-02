@@ -17,11 +17,7 @@ return new class extends Migration
             $table->integer('stock_quantity'); 
             $table->decimal('price', 10, 2); 
             $table->text('description')->nullable(); 
-            $table->unsignedBigInteger('doctor_id'); // Kolom foreign key untuk menghubungkan dengan tabel doctors
             $table->timestamps();
-
-            // Definisi foreign key constraint
-            $table->foreign('doctor_id')->references('id')->on('doctors');
         });
     }
 

@@ -16,6 +16,17 @@
             <div class="container">
                 <h2>Medical Devices CRUD</h2>
                 <a href="{{ url('/medicaldevice_add') }}" class="btn btn-success mb-2">Add Medical Device</a>
+                <!-- Tampilkan pesan notifikasi jika ada -->
+                @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+                @endif
+                @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+                @endif
                 <table class="table table-bordered" style="width: 900px; height: 200px;">
                     <thead>
                         <tr>
@@ -50,7 +61,6 @@
             </div>
         </div>
     </div>
-
     <!-- Include your scripts and other footer content here -->
     @include('admin.script')
 </body>
