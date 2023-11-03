@@ -6,34 +6,45 @@
     @include('dokter.css')
     <style>
         table {
-            margin: 0 auto;
-            /* Center-align the table both horizontally and vertically */
+            margin: 0;
+            /* Menghapus margin di sisi kiri dan kanan */
             width: 100%;
-            /* Adjust the width as needed */
             border-collapse: collapse;
-            /* Collapse table borders */
         }
 
         th,
         td {
             padding: 10px;
-            /* Add padding for spacing */
             text-align: center;
-            /* Center-align text in table cells */
+            white-space: nowrap;
+            /* Menghindari teks yang terlalu panjang untuk pindah ke baris berikutnya */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Menambahkan titik-titik lanjutan jika teks terlalu panjang */
+            max-width: 200px;
+            /* Batasan lebar maksimum untuk teks */
         }
 
         tr:nth-child(odd) {
             background-color: skyblue;
-            /* Apply background color to alternate rows */
         }
 
         th {
             background-color: black;
-            /* Header row background color */
             color: white;
-            /* Header row text color */
+        }
+
+        /* Tambahkan style khusus untuk kolom Status dan Action */
+        td.status,
+        td.action {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 150px;
+            /* Sesuaikan dengan lebar yang Anda inginkan */
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
 
 <body>
@@ -68,8 +79,8 @@
                         <td class="align-middle text-center mx-3">{{$appoint->status}}</td>
                         <td class="align-middle text-center mx-3">
                             <div class="mx-5">
-                                <a class="btn btn-danger" href="{{ route('canceled.appointment', $appoint->id) }}">Canceled</a>
-                                <a class="btn btn-success" href="{{ route('appointment.approved', $appoint->id) }}">Approved</a>
+                                <a href="{{ route('canceled.appointment', $appoint->id) }}"><i  class="fa fa-times" aria-hidden="true" ></i></a>
+                                <a href="{{ route('appointment.approved', $appoint->id) }}"><i class="fas fa-check" aria-hidden="true"></i></a>
                             </div>
                         </td>
                     </tr>

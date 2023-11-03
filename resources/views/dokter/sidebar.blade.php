@@ -1,3 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  @include('dokter.css')
+  <style>
+    /* Anda dapat menambahkan gaya khusus untuk sidebar ini */
+    .sidebar {
+      width: 100px; /* Sesuaikan lebar sesuai keinginan Anda */
+      padding-top: 20px;
+    }
+
+    .sidebar-brand-wrapper {
+      justify-content: flex-start;
+    }
+
+    .nav {
+      padding-left: 0;
+    }
+
+    .profile {
+      margin-bottom: 20px;
+    }
+
+    .profile-desc {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .profile-name {
+      margin-left: 10px;
+    }
+
+    .menu-items {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
     <a class="sidebar-brand brand-logo" href="{{ route('appointmentdokter') }}"><img src="{{ asset('admin/assets/images/logo.svg') }}" alt="logo" /></a>
