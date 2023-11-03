@@ -64,3 +64,5 @@ Route::post('/medicine/add', [AdminController::class, 'store_medicine']);
 Route::get('/medicine/edit/{id}', [AdminController::class, 'medicine_edit'])->name('admin.medicine.edit');
 Route::put('/medicine/update/{id}', [AdminController::class, 'update_medicine'])->name('admin.medicine.update');
 Route::delete('/medicine/delete/{id}', [AdminController::class, 'destroy_medicine']);
+
+//////////////////////////////
